@@ -1,0 +1,27 @@
+[
+  {
+    "week": 1,
+    "Guest": 200,
+    "User": 100
+  },
+  {
+    "week": 2,
+    "Guest": 300,
+    "User": 50
+  },
+  {
+    "week": 3,
+    "Guest": 30,
+    "User": 70
+  },
+  {
+    "week": 4,
+    "Guest": 150,
+    "User": 400
+  },
+  {
+    "week": 5,
+    "Guest": 250,
+    "User": 300
+  }
+]
