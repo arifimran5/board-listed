@@ -129,7 +129,6 @@ function SideBar() {
         <div className="flex flex-col">
           <span>Help</span>
           <span>Contact US</span>
-          <span className="mt-2 font-bold">Logout</span>
         </div>
       </div>
       {/* )} */}

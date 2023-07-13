@@ -1,5 +1,6 @@
 import LineGraph from "@/components/LineGraph";
 import PieChart from "@/components/PieChart";
+import { UserButton } from "@clerk/nextjs";
 import { Search, Bell, Tags, Users2, ThumbsUp } from "lucide-react";
 import Image from "next/image";
 function DashBoardPage() {
@@ -19,13 +20,21 @@ function DashBoardPage() {
           </div>
           <Bell className="cursor-pointer" />
           <div>
-            <Image
+            <UserButton
+              appearance={{
+                elements: {
+                  card: "shadow-md",
+                },
+              }}
+              afterSignOutUrl="/signin"
+            />
+            {/* <Image
               src="/user-image.jpg"
               width="30"
               height="30"
               className="cursor-pointer"
               alt="user avatar"
-            />
+            /> */}
           </div>
         </div>
       </div>
