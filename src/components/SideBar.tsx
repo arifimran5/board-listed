@@ -72,7 +72,7 @@ function SideBar() {
     <>
       <div
         className={cn(
-          "flex sticky top-4 flex-col h-[94vh] justify-between px-10 pl-[53px] min-w-[280px] py-5 text-white bg-gray-950 rounded-2xl"
+          "flex sticky top-4 flex-col xl:h-[94vh] gap-8 xl:gap-0 justify-between px-10 pl-[53px] min-w-[280px] py-5 text-white bg-gray-950 rounded-2xl"
         )}
       >
         <div>
