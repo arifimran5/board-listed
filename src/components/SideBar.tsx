@@ -48,7 +48,7 @@ export default function MobileSideBar() {
             : "-translate-x-[120%] h-full"
         } xl:translate-x-0 absolute z-50 transition-all duration-300 ease-out`}
       >
-        <SideBar />
+        <SideBar handleClose={handleClose} />
       </div>
 
       <div
@@ -61,7 +61,7 @@ export default function MobileSideBar() {
   );
 }
 
-function SideBar() {
+function SideBar({ handleClose }: { handleClose: () => void }) {
   const pathname = usePathname();
 
   function isActive(url: string) {
@@ -77,7 +77,10 @@ function SideBar() {
       >
         <div>
           <h1 className="my-4 text-3xl font-black xl:text-4xl">Board.</h1>
-          <nav className="flex flex-col gap-6 mt-8 text-lg xl:gap-8 xl:mt-16 xl:text-xl">
+          <nav
+            onClick={handleClose}
+            className="flex flex-col gap-6 mt-8 text-lg xl:gap-8 xl:mt-16 xl:text-xl"
+          >
             <div className="inline-flex items-center gap-3">
               <PieChart className="w-5" />
               <Link
@@ -131,9 +134,6 @@ function SideBar() {
           <span>Contact US</span>
         </div>
       </div>
-      {/* )} */}
     </>
   );
 }
-
-// export default SideBar;
