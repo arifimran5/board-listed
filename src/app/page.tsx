@@ -1,12 +1,11 @@
-import { auth } from "@clerk/nextjs";
 import { redirect } from "next/navigation";
 
 export default function Home() {
-  redirect("/signin");
+  redirect("/app/dashboard");
 
   return (
     <main>
-      <h1>Hello</h1>
+      <h1>Hello there</h1>
     </main>
   );
 }

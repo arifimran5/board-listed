@@ -9,6 +9,9 @@ module.exports = {
   theme: {
     transparent: "transparent",
     current: "currentColor",
+    fontFamily: {
+      sans: ["Inter", "sans-serif"]
+    },
     extend: {
       colors: {
         // light mode
