@@ -67,7 +67,7 @@ function PieChart() {
   return (
     <div className="p-4 mt-1 bg-white shadow-md rounded-xl ring-1 ring-gray-300/10">
       <h2 className="text-xl">Top products</h2>
-      <div className="flex flex-col gap-8 mt-3 lg:flex-row">
+      <div className="flex flex-col items-center gap-8 mt-3 lg:flex-row lg:items-start">
         <div className="h-40">
           <Pie data={pieChart} options={chartOptions} />
         </div>

@@ -41,12 +41,20 @@ type chartOptions = _DeepPartialObject<
 >;
 
 const options: chartOptions = {
-  aspectRatio: 600 / 140,
+  aspectRatio: 600 / 160,
   responsive: true,
   plugins: {
     legend: {
-      position: "top" as const,
-      display: false,
+      position: "top",
+      display: true,
+      align: "end",
+      labels: {
+        boxWidth: 3,
+        boxHeight: 3,
+        useBorderRadius: true,
+        borderRadius: 1,
+      },
+      maxHeight: 25,
     },
   },
   scales: {
@@ -108,9 +116,9 @@ const LineGraph = () => {
       <div className="p-6 bg-white shadow-md rounded-xl ring-1 ring-gray-300/10">
         <h2 className="text-xl">Activities</h2>
         <Line
-          className="mt-3"
+          className="mt-3 lg:aspect-[600/140]"
           updateMode="resize"
-          options={options}
+          options={{ ...options }}
           data={chartConfig}
         />
       </div>
