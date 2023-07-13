@@ -77,7 +77,7 @@ function SideBar() {
       >
         <div>
           <h1 className="my-4 text-3xl font-black xl:text-4xl">Board.</h1>
-          <nav className="flex flex-col gap-8 mt-16 text-lg xl:text-xl">
+          <nav className="flex flex-col gap-6 mt-8 text-lg xl:gap-8 xl:mt-16 xl:text-xl">
             <div className="inline-flex items-center gap-3">
               <PieChart className="w-5" />
               <Link
