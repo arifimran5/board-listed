@@ -1,7 +1,15 @@
 import { FcGoogle } from "react-icons/fc";
 import { FaApple } from "react-icons/fa";
-import { SignIn } from "@clerk/nextjs";
+import { SignIn, auth } from "@clerk/nextjs";
+import { redirect } from "next/navigation";
+
 export default function SignInPage() {
+  const user = auth();
+
+  if (user.session) {
+    redirect("/app/dashboard");
+  }
+
   return (
     <main className="grid min-h-screen grid-cols-1 md:grid-cols-3">
       <div className="grid text-white md:h-full md:col-span-1 place-content-center bg-gray-950">
