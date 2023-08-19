@@ -113,7 +113,7 @@ const LineGraph = () => {
 
   return (
     <div className='mt-8'>
-      <div className='p-6 bg-white shadow-md rounded-[20px] ring-1 ring-gray-300/10'>
+      <div className='p-6 animate-in slide-in-from-top fade-in duration-500 bg-white shadow-md rounded-[20px] ring-1 ring-gray-300/10'>
         <h2 className='text-xl'>Activities</h2>
         <Line
           className='mt-3 lg:aspect-[600/140]'

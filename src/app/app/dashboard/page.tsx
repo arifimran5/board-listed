@@ -53,7 +53,7 @@ function DashBoardPage() {
         <div className=''>
           <LineGraph />
         </div>
-        <div className='grid grid-cols-1 gap-4 mt-8 sm:grid-cols-2 '>
+        <div className='grid grid-cols-1 gap-4 mt-8 duration-500 fade-in animate-in slide-in-from-top sm:grid-cols-2 '>
           <PieChart />
           <SchedulesBox />
         </div>
@@ -74,7 +74,7 @@ function DashBoardBoxes() {
 
   return (
     <section className='grid grid-cols-1 mt-8 sm:grid-cols-2 gap-x-20 gap-y-4 lg:grid-cols-4 lg:gap-x-12'>
-      <div className='flex flex-col px-6 py-3 shadow-md ring-1 ring-gray-300/10 bg-[#DDEFE0] rounded-[20px]'>
+      <div className='flex flex-col px-6 animate-in slide-in-from-top fade-in duration-500 py-3 shadow-md ring-1 ring-gray-300/10 bg-[#DDEFE0] rounded-[20px]'>
         <span className='self-end'>
           <Image src='/revenue.svg' width='25' height='25' alt='revenue icon' />
         </span>
@@ -83,7 +83,7 @@ function DashBoardBoxes() {
           ${usaFormat.format(boxData.revenues)}
         </b>
       </div>
-      <div className='flex flex-col px-6 py-3 shadow-md ring-1 ring-gray-300/10 bg-[#F4ECDD] rounded-[20px]'>
+      <div className='flex flex-col px-6 animate-in slide-in-from-top fade-in duration-500 py-3 shadow-md ring-1 ring-gray-300/10 bg-[#F4ECDD] rounded-[20px]'>
         <span className='self-end'>
           <Tags />
         </span>
@@ -92,7 +92,7 @@ function DashBoardBoxes() {
           {usaFormat.format(boxData.transactions)}
         </b>
       </div>
-      <div className='flex flex-col px-6 py-3 shadow-md ring-1 ring-gray-300/10 bg-[#EFDADA] rounded-[20px]'>
+      <div className='flex flex-col px-6 animate-in slide-in-from-top fade-in duration-500 py-3 shadow-md ring-1 ring-gray-300/10 bg-[#EFDADA] rounded-[20px]'>
         <span className='self-end'>
           <ThumbsUp />
         </span>
@@ -101,7 +101,7 @@ function DashBoardBoxes() {
           {usaFormat.format(boxData.likes)}
         </b>
       </div>
-      <div className='flex flex-col px-6 py-3 shadow-md ring-1 ring-gray-300/10 bg-[#DEE0EF] rounded-[20px]'>
+      <div className='flex flex-col px-6 animate-in slide-in-from-top fade-in duration-500 py-3 shadow-md ring-1 ring-gray-300/10 bg-[#DEE0EF] rounded-[20px]'>
         <span className='self-end'>
           <Users2 />
         </span>

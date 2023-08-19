@@ -71,7 +71,7 @@ function SideBar({ handleClose }: { handleClose: () => void }) {
     <>
       <div
         className={cn(
-          'flex sticky top-4 flex-col xl:h-[94vh] gap-8 xl:gap-0 justify-between px-10 pl-[53px] min-w-[280px] py-5 text-white bg-gray-950 rounded-[20px]'
+          'flex sticky top-4 flex-col xl:h-[94vh] gap-8 xl:gap-0 justify-between px-10 pl-[53px] min-w-[280px] py-5 text-white bg-gray-950 rounded-[20px] animate-in slide-in-from-left fade-in duration-500'
         )}
       >
         <div>
