@@ -1,7 +1,14 @@
 import LineGraph from '@/components/LineGraph'
 import PieChart from '@/components/PieChart'
 import { UserButton } from '@clerk/nextjs'
-import { Search, Bell, Tags, Users2, ThumbsUp } from 'lucide-react'
+import {
+  Search,
+  Bell,
+  Tags,
+  Users2,
+  ThumbsUp,
+  ChevronRight,
+} from 'lucide-react'
 import Image from 'next/image'
 function DashBoardPage() {
   return (
@@ -110,7 +117,13 @@ function DashBoardBoxes() {
 function SchedulesBox() {
   return (
     <div className='p-4 mt-1 bg-white shadow-md rounded-[20px] ring-1 ring-gray-300/10'>
-      <h2 className='text-xl'>Today&apos;s Schedules</h2>
+      <div className='flex items-center justify-between'>
+        <h2 className='text-xl'>Today&apos;s Schedules</h2>
+        <span className='flex items-center gap-2 text-sm text-gray-400 cursor-pointer'>
+          <span>See all</span>
+          <ChevronRight size={20} />
+        </span>
+      </div>
 
       <div className='mt-3 space-y-4'>
         <div className='pl-4 ml-1 border-l-4 border-green-300'>

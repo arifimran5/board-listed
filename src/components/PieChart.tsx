@@ -13,6 +13,7 @@ import {
   DoughnutControllerChartOptions,
 } from 'chart.js'
 import { _DeepPartialObject } from 'chart.js/dist/types/utils'
+import { ChevronDown } from 'lucide-react'
 import { Pie } from 'react-chartjs-2'
 
 ChartJS.register(ArcElement, Tooltip, Legend)
@@ -66,7 +67,13 @@ const chartOptions: chartoptionsType = {
 function PieChart() {
   return (
     <div className='p-4 mt-1 bg-white shadow-md rounded-[20px] ring-1 ring-gray-300/10'>
-      <h2 className='text-xl'>Top products</h2>
+      <div className='flex items-center justify-between'>
+        <h2 className='text-xl'>Top products</h2>
+        <span className='flex items-center gap-2 text-sm text-gray-400 cursor-pointer'>
+          <span>May-June 2021</span>
+          <ChevronDown size={20} />
+        </span>
+      </div>
       <div className='flex flex-col items-center gap-8 mt-3 lg:flex-row lg:items-start'>
         <div className='h-40'>
           <Pie data={pieChart} options={chartOptions} />
