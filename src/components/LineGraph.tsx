@@ -1,6 +1,6 @@
-"use client";
+'use client'
 
-import { Line } from "react-chartjs-2";
+import { Line } from 'react-chartjs-2'
 
 import {
   Chart as ChartJS,
@@ -17,9 +17,9 @@ import {
   DatasetChartOptions,
   PluginChartOptions,
   LineControllerChartOptions,
-} from "chart.js";
-import { useEffect, useState } from "react";
-import { _DeepPartialObject } from "chart.js/dist/types/utils";
+} from 'chart.js'
+import { useEffect, useState } from 'react'
+import { _DeepPartialObject } from 'chart.js/dist/types/utils'
 
 ChartJS.register(
   CategoryScale,
@@ -29,25 +29,25 @@ ChartJS.register(
   Title,
   Tooltip,
   Legend
-);
+)
 
 type chartOptions = _DeepPartialObject<
-  CoreChartOptions<"line"> &
-    ElementChartOptions<"line"> &
-    PluginChartOptions<"line"> &
-    DatasetChartOptions<"line"> &
-    ScaleChartOptions<"line"> &
+  CoreChartOptions<'line'> &
+    ElementChartOptions<'line'> &
+    PluginChartOptions<'line'> &
+    DatasetChartOptions<'line'> &
+    ScaleChartOptions<'line'> &
     LineControllerChartOptions
->;
+>
 
 const options: chartOptions = {
   aspectRatio: 600 / 160,
   responsive: true,
   plugins: {
     legend: {
-      position: "top",
+      position: 'top',
       display: true,
-      align: "end",
+      align: 'end',
       labels: {
         boxWidth: 3,
         boxHeight: 3,
@@ -69,61 +69,61 @@ const options: chartOptions = {
       },
     },
   },
-};
+}
 
 type ChartData = {
-  week: number;
-  Guest: number;
-  User: number;
-};
+  week: number
+  Guest: number
+  User: number
+}
 const LineGraph = () => {
-  const [chartData, setChartData] = useState<ChartData[]>([]);
+  const [chartData, setChartData] = useState<ChartData[]>([])
 
   useEffect(() => {
-    fetch("/chartData.json")
+    fetch('/chartData.json')
       .then((res) => res.json())
-      .then((data) => setChartData(data));
-  }, []);
+      .then((data) => setChartData(data))
+  }, [])
 
   if (!chartData) {
-    return <div>loading...</div>;
+    return <div>loading...</div>
   }
 
-  const labels = chartData.map((data) => `week ${data.week}`);
-  const guestData = chartData.map((data) => data.Guest);
-  const userData = chartData.map((data) => data.User);
+  const labels = chartData.map((data) => `week ${data.week}`)
+  const guestData = chartData.map((data) => data.Guest)
+  const userData = chartData.map((data) => data.User)
 
   const chartConfig = {
     labels: labels,
     datasets: [
       {
-        label: "Guest",
+        label: 'Guest',
         data: guestData,
         fill: false,
-        borderColor: "rgb(255,211,150)",
+        borderColor: 'rgb(255,211,150)',
       },
       {
-        label: "User",
+        label: 'User',
         data: userData,
         fill: false,
-        borderColor: "#8fff60",
+        borderColor: '#8fff60',
       },
     ],
-  };
+  }
 
   return (
-    <div className="mt-8">
-      <div className="p-6 bg-white shadow-md rounded-xl ring-1 ring-gray-300/10">
-        <h2 className="text-xl">Activities</h2>
+    <div className='mt-8'>
+      <div className='p-6 bg-white shadow-md rounded-[20px] ring-1 ring-gray-300/10'>
+        <h2 className='text-xl'>Activities</h2>
         <Line
-          className="mt-3 lg:aspect-[600/140]"
-          updateMode="resize"
+          className='mt-3 lg:aspect-[600/140]'
+          updateMode='resize'
           options={{ ...options }}
           data={chartConfig}
         />
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default LineGraph;
+export default LineGraph
